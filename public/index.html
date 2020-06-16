@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Currency Converter</title>
+  <script src="./js/bundle.js"></script>
+</head>
+<body>
+
+  <h1>Currency Exchange Calculator</h1>
+
+  <div id="app">
+
+    <h2>Convert Euro!</h2>
+
+    <div class="">
+
+
+      <input type="number" placeholder="enter amount.." v-model.number="euroAmount">
+      <!-- <label for="currency-select">Select Currency</label> -->
+      <select id="currency-select" v-model="selectedCurrency">
+        <option disabled value="">Select Currency</option>
+        <option v-for="(currency,key) in currencies" :value="currency">{{key}}</option>
+      </select>
+      <!-- <button type="button" v-on:click="calculateExchange">Calculate</button> -->
+      <p>Exchanged amount: {{calculateExchange}}</p>
+    </div>
+
+
+  </div>
+
+</body>
+</html>
