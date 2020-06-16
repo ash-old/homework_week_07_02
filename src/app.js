@@ -10,7 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     computed: {
       calculateExchange: function(){
-        return this.euroAmount + this.selectedCurrency
+        const result = this.euroAmount + this.selectedCurrency
+        return result.toFixed(2)
       }
     },
     mounted(){
