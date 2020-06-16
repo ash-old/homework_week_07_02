@@ -6,11 +6,17 @@ document.addEventListener("DOMContentLoaded", () => {
     data: {
       currencies: [],
       selectedCurrency: null,
-      euroAmount: null
+      euroAmount: null,
+      convertToEuro: null,
+      toEuroAmount: null
     },
     computed: {
       calculateExchange: function(){
-        const result = this.euroAmount + this.selectedCurrency
+        const result = this.euroAmount * this.selectedCurrency
+        return result.toFixed(2)
+      },
+      toEuro: function(){
+        const result = this.convertToEuro / this.toEuroAmount
         return result.toFixed(2)
       }
     },

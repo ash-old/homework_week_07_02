@@ -11,12 +11,10 @@
 
   <div id="app">
 
-    <h2>Convert Euro!</h2>
+    <h2>Convert Euro:</h2>
 
     <div class="">
-
-
-      <input type="number" placeholder="enter amount.." v-model.number="euroAmount">
+      <input type="number" placeholder="enter euro amount.." v-model.number="euroAmount">
       <!-- <label for="currency-select">Select Currency</label> -->
       <select id="currency-select" v-model="selectedCurrency">
         <option disabled value="">Select Currency</option>
@@ -24,6 +22,17 @@
       </select>
       <!-- <button type="button" v-on:click="calculateExchange">Calculate</button> -->
       <p>Exchanged amount: {{calculateExchange}}</p>
+    </div>
+
+    <div class="">
+      <h2>Convert to Euro:</h2>
+      <select id="currency-select" v-model="convertToEuro">
+        <option disabled value="">Select Currency</option>
+        <option v-for="(currency,key) in currencies" :value="currency">{{key}}</option>
+        
+        <input type="number" placeholder="enter euros.." v-model.number="toEuroAmount">
+      </select>
+      <p>Exchanged amount: {{toEuro}}</p>
     </div>
 
 
